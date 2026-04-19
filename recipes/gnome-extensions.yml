@@ -1,0 +1,9 @@
+type: gnome-extensions
+install:
+  - Blur my Shell
+  - AppIndicator and KStatusNotifierItem Support
+#  - Bazaar Companion
+  - GSConnect
+  - Launch New Instance
+  - Search Light
+  - Gnome 4x UI Improvements

@@ -1,0 +1,47 @@
+type: dnf
+repos:
+  files:
+    - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
+  copr:
+    - atim/starship
+group-install:
+  packages:
+    - development-tools
+install:
+  packages:
+    - alsa-lib-devel
+    - desktop-file-utils
+    - distrobox
+    - ffmpeg
+    - flatpak
+    - flatpak-builder
+    - gcc-c++
+    - gh
+    - glib-compile-resources
+    - gtk4-devel
+    - gtk4-update-icon-cache
+    - javapackages-tools
+    - jq
+    - libX11-devel
+    - libXcursor-devel
+    - libXi-devel
+    - libadwaita-devel
+    - libxkbcommon-devel
+    - libxkbcommon-x11-devel
+    - meson
+    - micro
+    - mold
+    - nodejs
+    - nu
+    - pylsp
+    - rustup
+    - starship
+    - systemd-devel
+    - update-desktop-database
+    - wayland-devel
+    - zed
+remove:
+  packages:
+    - firefox
+    - firefox-langpacks
+    - toolbx

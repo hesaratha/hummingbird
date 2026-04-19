@@ -1,0 +1,13 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/<user>/<name>
+name: hummingbird
+description: This is my personal OS image.
+base-image: ghcr.io/ublue-os/bluefin
+image-version: latest
+modules:
+  - from-file: default-flatpaks.yml
+  - from-file: dnf.yml
+  - from-file: files.yml
+  - from-file: gnome-extensions.yml
+  - from-file: signing.yml
