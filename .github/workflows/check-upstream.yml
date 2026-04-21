@@ -58,6 +58,6 @@ jobs:
         if: steps.compare.outputs.changed == 'true'
         run: |
           echo "Upstream image changed — triggering build"
-          gh workflow run bluebuild.yml --ref "$GITHUB_REF_NAME"
+          gh workflow run bluebuild.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
