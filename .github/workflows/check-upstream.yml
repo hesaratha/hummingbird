@@ -22,7 +22,7 @@ jobs:
 
       - name: Restore last known digest from cache
         id: cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: last-digest.txt
           # restore-keys finds the most recent cache with this prefix,
@@ -49,7 +49,7 @@ jobs:
 
       - name: Save new digest to cache
         if: steps.compare.outputs.changed == 'true'
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: last-digest.txt
           key: bluefin-latest-digest-${{ steps.current.outputs.digest }}
