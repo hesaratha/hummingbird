@@ -32,14 +32,11 @@ install:
     - micro
     - mold
     - nodejs
-    - nu
     - pylsp
-    - rustup
     - starship
     - systemd-devel
     - update-desktop-database
     - wayland-devel
-    - zed
 remove:
   packages:
     - firefox
