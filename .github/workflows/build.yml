@@ -1,4 +1,4 @@
-name: bluebuild
+name: Build OS Image
 on:
   push:
     paths-ignore: # don't rebuild if only documentation has changed
