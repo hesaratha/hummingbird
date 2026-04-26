@@ -2,7 +2,6 @@ type: dnf
 repos:
   files:
     - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
-    - https://repo.protonvpn.com/fedora-stable/protonvpn.repo
   copr:
     - atim/starship
 group-install:
