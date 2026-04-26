@@ -30,7 +30,7 @@ install:
     - micro
     - mold
     - nodejs
-    - protonvpn-cli
+    - python-proton-vpn-cli
     - pylsp
     - starship
     - systemd-devel
