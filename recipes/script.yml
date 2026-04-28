@@ -1,3 +1,3 @@
-- type: scripts
+- type: script
   scripts:
     - merge-os-release.sh
