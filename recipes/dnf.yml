@@ -8,6 +8,7 @@ group-install:
 install:
   packages:
     - alsa-lib-devel
+    - carapace
     - desktop-file-utils
     - distrobox
     - ffmpeg
