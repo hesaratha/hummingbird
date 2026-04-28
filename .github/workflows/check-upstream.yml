@@ -13,11 +13,11 @@ jobs:
       actions: write       # needed to trigger the build workflow
 
     steps:
-      - name: Get current digest of bluefin:latest
+      - name: Get current digest of bluefin-dx:latest
         id: current
         run: |
           DIGEST=$(skopeo inspect --format '{{.Digest}}' \
-            docker://ghcr.io/ublue-os/bluefin:latest)
+            docker://ghcr.io/ublue-os/bluefin-dx:latest)
           echo "digest=$DIGEST" >> "$GITHUB_OUTPUT"
 
       - name: Restore last known digest from cache
