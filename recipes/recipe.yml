@@ -10,4 +10,5 @@ modules:
   - from-file: dnf.yml
   - from-file: files.yml
   - from-file: gnome-extensions.yml
+  - from-file: scripts.yml
   - from-file: signing.yml
