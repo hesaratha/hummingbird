@@ -1,7 +1,4 @@
 type: dnf
-repos:
-  files:
-    - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
 install:
   packages:
     - alsa-lib-devel
