@@ -1,0 +1,15 @@
+type: brew
+install:
+  packages:
+    - bottom
+    - carapace
+    - ffmpeg-full
+    - gh
+    - jq
+    - micro
+    - mold
+    - nushell
+    - python-lsp-server
+    - starship
+    - typst
+    - uv
