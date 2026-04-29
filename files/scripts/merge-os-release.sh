@@ -5,7 +5,7 @@ set -euo pipefail
 declared_keys=()
 while IFS= read -r line; do
     [[ "$line" =~ ^([A-Z_]+)= ]] && declared_keys+=("${BASH_REMATCH[1]}")
-done < /etc/os-release
+done < /etc/os-release.local
 
 # Append anything missing from /usr/lib/os-release
 while IFS= read -r line; do
