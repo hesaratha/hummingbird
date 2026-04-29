@@ -5,14 +5,9 @@ local_file="/etc/os-release.local"
 base_file="/usr/lib/os-release"
 out_file="/etc/os-release"
 tmp_file="$(mktemp)"
+trap 'rm -f "$tmp_file"' EXIT
 
-# Start with the local overrides
-cp "$local_file" "$tmp_file"
-
-# Collect keys already declared in the local file
 declared_keys=()
-
-# Start with the local overrides if any
 if [[ -f "$local_file" ]]; then
     cp "$local_file" "$tmp_file"
     while IFS= read -r line; do
@@ -20,7 +15,6 @@ if [[ -f "$local_file" ]]; then
     done < "$local_file"
 fi
 
-# Append anything missing from the base file
 while IFS= read -r line; do
     if [[ "$line" =~ ^([A-Z_]+)= ]]; then
         key="${BASH_REMATCH[1]}"
@@ -30,5 +24,4 @@ while IFS= read -r line; do
     fi
 done < "$base_file"
 
-# Atomically replace /etc/os-release (breaks the symlink, creates a real file)
 mv "$tmp_file" "$out_file"
