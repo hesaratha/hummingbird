@@ -6,7 +6,6 @@ description: This is my personal OS image.
 base-image: ghcr.io/ublue-os/bluefin
 image-version: latest
 modules:
-  - from-file: brew.yml
   - from-file: default-flatpaks.yml
   - from-file: dnf.yml
   - from-file: files.yml
