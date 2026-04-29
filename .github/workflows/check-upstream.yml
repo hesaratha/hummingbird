@@ -13,11 +13,11 @@ jobs:
       actions: write       # needed to trigger the build workflow
 
     steps:
-      - name: Get current digest of bluefin-dx:latest
+      - name: Get current digest of bluefin:latest
         id: current
         run: |
           DIGEST=$(skopeo inspect --format '{{.Digest}}' \
-            docker://ghcr.io/ublue-os/bluefin-dx:latest)
+            docker://ghcr.io/ublue-os/bluefin:latest)
           echo "digest=$DIGEST" >> "$GITHUB_OUTPUT"
 
       - name: Restore last known digest from cache
@@ -27,8 +27,8 @@ jobs:
           path: last-digest.txt
           # restore-keys finds the most recent cache with this prefix,
           # regardless of the suffix (i.e., regardless of old digest value)
-          restore-keys: bluefin-dx-latest-digest-
-          key: bluefin-dx-latest-digest-${{ steps.current.outputs.digest }}
+          restore-keys: bluefin-latest-digest-
+          key: bluefin-latest-digest-${{ steps.current.outputs.digest }}
 
       - name: Compare digests
         id: compare
@@ -52,7 +52,7 @@ jobs:
         uses: actions/cache/save@v5
         with:
           path: last-digest.txt
-          key: bluefin-dx-latest-digest-${{ steps.current.outputs.digest }}
+          key: bluefin-latest-digest-${{ steps.current.outputs.digest }}
 
       - name: Trigger build workflow
         if: steps.compare.outputs.changed == 'true'
