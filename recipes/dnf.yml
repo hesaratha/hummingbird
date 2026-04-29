@@ -2,25 +2,18 @@ type: dnf
 repos:
   files:
     - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
-group-install:
-  packages:
-    - development-tools
 install:
   packages:
     - alsa-lib-devel
-    - carapace
     - desktop-file-utils
     - distrobox
-    - ffmpeg
     - flatpak
     - flatpak-builder
     - gcc-c++
-    - gh
     - glib-compile-resources
     - gtk4-devel
     - gtk4-update-icon-cache
     - javapackages-tools
-    - jq
     - libX11-devel
     - libXcursor-devel
     - libXi-devel
@@ -28,16 +21,10 @@ install:
     - libxkbcommon-devel
     - libxkbcommon-x11-devel
     - meson
-    - micro
-    - mold
     - nodejs
-    - proton-vpn-cli
-    - pylsp
-    - starship
     - systemd-devel
     - update-desktop-database
     - wayland-devel
-    - zed
 remove:
   packages:
     - firefox
