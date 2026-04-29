@@ -3,7 +3,7 @@
 # image will be published to ghcr.io/<user>/<name>
 name: hummingbird
 description: This is my personal OS image.
-base-image: ghcr.io/ublue-os/bluefin-dx
+base-image: ghcr.io/ublue-os/bluefin
 image-version: latest
 modules:
   - from-file: default-flatpaks.yml
