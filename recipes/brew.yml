@@ -12,6 +12,7 @@ install:
     - dysk
     - eza
     - fd
+    - ferium
     - ffmpeg-full
     - fzf
     - gh
@@ -25,8 +26,10 @@ install:
     - podman-tui
     - python-lsp-server
     - ripgrep
+    - rustup
     - starship
     - tealdeer
+    - topgrade
     - trash-cli
     - typst
     - ugrep
@@ -37,3 +40,27 @@ install:
     - valkyrie00/bbrew/bbrew
     - yq
     - zoxide
+
+    - bluebuild
+    - bluefin-cli
+    - bbrew
+    - proton-vpn-cli
+    - typst-live
+
+    - cargo-binstall v1.18.1:
+        cargo-binstall
+    - cargo-cache v0.8.3:
+        cargo-cache
+    - cargo-edit v0.13.10:
+        cargo-add
+        cargo-rm
+        cargo-set-version
+        cargo-upgrade
+    - cargo-pin-nightly v0.1.0 (/var/home/hesara/Projects/Cargo/cargo-pin-nightly):
+        cargo-pin-nightly
+    - cargo-update v20.0.0:
+        cargo-install-update
+        cargo-install-update-config
+    - typst-live v0.8.0:
+        typst-live
+
