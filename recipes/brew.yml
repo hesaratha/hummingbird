@@ -49,6 +49,9 @@ install:
     - wl-clipboard
     - clipboard
 
+    - vs-code
+    - zed
+
     - cargo-binstall v1.18.1:
         cargo-binstall
     - cargo-cache v0.8.3:
