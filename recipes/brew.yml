@@ -46,6 +46,8 @@ install:
     - bbrew
     - proton-vpn-cli
     - typst-live
+    - wl-clipboard
+    - clipboard
 
     - cargo-binstall v1.18.1:
         cargo-binstall
