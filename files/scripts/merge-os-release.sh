@@ -1,18 +1,29 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Collect keys already declared in /etc/os-release
+local_file="/etc/os-release.local"
+base_file="/usr/lib/os-release"
+out_file="/etc/os-release"
+tmp_file="$(mktemp)"
+
+# Start with the local overrides
+cp "$local_file" "$tmp_file"
+
+# Collect keys already declared in the local file
 declared_keys=()
 while IFS= read -r line; do
     [[ "$line" =~ ^([A-Z_]+)= ]] && declared_keys+=("${BASH_REMATCH[1]}")
-done < /etc/os-release.local
+done < "$local_file"
 
-# Append anything missing from /usr/lib/os-release
+# Append anything missing from the base file
 while IFS= read -r line; do
     if [[ "$line" =~ ^([A-Z_]+)= ]]; then
         key="${BASH_REMATCH[1]}"
         if [[ ! " ${declared_keys[*]} " =~ " ${key} " ]]; then
-            echo "$line" >> /etc/os-release
+            echo "$line" >> "$tmp_file"
         fi
     fi
-done < /usr/lib/os-release
+done < "$base_file"
+
+# Atomically replace /etc/os-release (breaks the symlink, creates a real file)
+mv "$tmp_file" "$out_file"
