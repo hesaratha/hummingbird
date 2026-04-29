@@ -1,15 +1,39 @@
 type: brew
 install:
   packages:
+    - atuin
+    - bat
+    - bash-preexec
     - bottom
+    - ublue-os/experimental-tap/bluefin-cli
     - carapace
+    - chezmoi
+    - direnv
+    - dysk
+    - eza
+    - fd
     - ffmpeg-full
+    - fzf
     - gh
+    - glow
+    - gsudo
     - jq
     - micro
+    - mise
     - mold
     - nushell
+    - podman-tui
     - python-lsp-server
+    - ripgrep
     - starship
+    - tealdeer
+    - trash-cli
     - typst
+    - ugrep
+    - uutils-coreutils
+    - uutils-diffutils
+    - uutils-findutils
     - uv
+    - valkyrie00/bbrew/bbrew
+    - yq
+    - zoxide
