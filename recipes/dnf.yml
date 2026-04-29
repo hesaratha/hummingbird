@@ -7,9 +7,7 @@ install:
     - alsa-lib-devel
     - desktop-file-utils
     - distrobox
-    - flatpak
     - flatpak-builder
-    - gcc-c++
     - glib-compile-resources
     - gtk4-devel
     - gtk4-update-icon-cache
@@ -20,8 +18,6 @@ install:
     - libadwaita-devel
     - libxkbcommon-devel
     - libxkbcommon-x11-devel
-    - meson
-    - nodejs
     - systemd-devel
     - update-desktop-database
     - wayland-devel
