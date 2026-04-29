@@ -11,9 +11,14 @@ cp "$local_file" "$tmp_file"
 
 # Collect keys already declared in the local file
 declared_keys=()
-while IFS= read -r line; do
-    [[ "$line" =~ ^([A-Z_]+)= ]] && declared_keys+=("${BASH_REMATCH[1]}")
-done < "$local_file"
+
+# Start with the local overrides if any
+if [[ -f "$local_file" ]]; then
+    cp "$local_file" "$tmp_file"
+    while IFS= read -r line; do
+        [[ "$line" =~ ^([A-Z_]+)= ]] && declared_keys+=("${BASH_REMATCH[1]}")
+    done < "$local_file"
+fi
 
 # Append anything missing from the base file
 while IFS= read -r line; do
