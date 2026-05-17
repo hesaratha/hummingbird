@@ -1,8 +1,8 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: hummingbird
-description: This is my personal OS image.
+name: anchiornis
+description: Anchiornis is a genus of small, four-winged paravian dinosaurs,.
 base-image: ghcr.io/ublue-os/bluefin
 image-version: latest
 modules:
